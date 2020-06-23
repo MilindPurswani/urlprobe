@@ -15,19 +15,6 @@ var concurrency int
 var times int
 var status int 
 
-func Banner() {
-        color.HiCyan(`
- ____ _____________.____   __________              ___.
-|    |   \______   \    |  \______   \_______  ____\_ |__   ____
-|    |   /|       _/    |   |     ___/\_  __ \/  _ \| __ \_/ __ \
-|    |  / |    |   \    |___|    |     |  | \(  <_> ) \_\ \  ___/
-|______/  |____|_  /_______ \____|     |__|   \____/|___  /\___  >
-                 \/        \/                           \/     \/   V 2.1`)
-        color.HiYellow("           URLProbe:- Urls Status Code & ContentLength Checker")
-        color.HiRed("              https://github.com/1ndianl33t")
-
-        color.HiCyan("-------------------------------------------------------------------------")
-}
 func printStatus(req *http.Request, resp *http.Response,  err error) {
         if err != nil {
                 return
@@ -81,7 +68,6 @@ func StatusCheck(req *http.Request, resp *http.Response) {
 }
 
 func main() {
-        Banner()
         ParseArguments()
         p := gahttp.NewPipeline()
         p.SetConcurrency(concurrency)
